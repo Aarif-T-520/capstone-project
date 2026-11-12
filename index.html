@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Fashion Store - Capstone Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Authentication Simulation Screen -->
+    <div id="login-screen" class="login-container">
+        <div class="login-box">
+            <h2>👔 Royal Fashion Store</h2>
+            <p>Apna naam daal kar store mein enter karein</p>
+            <input type="text" id="username-input" placeholder="Enter your name" required>
+            <button onclick="loginUser()">Enter Store</button>
+        </div>
+    </div>
+
+    <!-- Main Store Screen -->
+    <div id="app-screen" style="display: none;">
+        <header>
+            <div class="logo-area">
+                <h1>👔 Royal Fashion Store</h1>
+                <span id="welcome-msg"></span>
+            </div>
+            <div class="header-actions">
+                <div class="cart-info">🛒 Cart: <span id="cart-count">0</span> items</div>
+                <button class="logout-btn" onclick="logoutUser()">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Add / Edit Product Form -->
+            <section class="card-section">
+                <h2 id="form-title">➕ Add New Outfit / Product</h2>
+                <form id="product-form">
+                    <input type="hidden" id="edit-id">
+                    <input type="text" id="prod-name" placeholder="Product Name (e.g. Jodhpuri Suit)" required>
+                    <input type="number" id="prod-price" placeholder="Price (₹)" required>
+                    <input type="text" id="prod-category" placeholder="Category (e.g. Shirt, Coat, Pant)" required>
+                    <input type="url" id="prod-image" placeholder="Image URL (Optional)">
+                    <button type="submit" id="submit-btn">Add Product</button>
+                </form>
+            </section>
+
+            <!-- Product Catalog with Search -->
+            <section class="card-section">
+                <div class="catalog-header">
+                    <h2>🛍️ Fashion Collection</h2>
+                    <input type="text" id="search-input" onkeyup="searchProducts()" placeholder="🔍 Search Shirt, Pant, Coat...">
+                </div>
+                <div id="product-list" class="grid-container">
+                    <!-- Products with Photos will load here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
